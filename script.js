@@ -1,5 +1,8 @@
 window.onload = function(){
 
+    var currentLanguage = navigator.language || navigator.userLanguage;
+    var abc = ['Your Score', 'Sua pontuação']
+
     String.prototype.repeat =  String.prototype.repeat ||
     function(c){
         var r= '';
@@ -357,7 +360,12 @@ window.onload = function(){
                                     document.getElementById("animCanvas").removeEventListener("click",shoot);
                                     document.body.removeEventListener("keydown",shoot);
                                     startPage.style.display = "block";
-                                    document.getElementById("title").innerHTML = "YOUR SCORE<br>"+totalScore;
+                                    if (currentLanguage == 'en-US'){
+                                        document.getElementById("title").innerHTML = abc[0]+"<br>"+totalScore;
+                                    }else {
+                                        document.getElementById("title").innerHTML = abc[1]+"<br>"+totalScore;
+                                    }
+                                    
                                     if(bestScore < totalScore){
                                         bestScore = totalScore;
                                         try{

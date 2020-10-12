@@ -7,20 +7,47 @@
        <meta charset="utf-8">
        <link rel="stylesheet" href="style.css">
        <script src="script.js"></script>
+       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
     </head>
     <body>
         <div id="mainContainer">
-        <canvas id="myCanvas"></canvas>
-        <canvas id="animCanvas"></canvas>
-        <h1 id="score">0</h1>
-        <div id="showPoint"><p id="arrs">&uarr;</p><span class="u">&uarr; +4</span></div>
-        <div id="startMenu">
-            <h1 id="title"><span style="font-size:60px">A</span>rchery<br><span style="font-size:60px">G</span>ame</h1>
-            <button>Click to begin</button>
-            <h2><span id="best">0</span><br>Best pontuation</h2>
+            <canvas id="myCanvas"></canvas>
+            <canvas id="animCanvas"></canvas>
+            <h1 id="score">0</h1>
+            <div id="showPoint"><p id="arrs">&uarr;</p><span class="u">&uarr; +4</span></div>
+            <div id="startMenu">
+                <h1 id="title">title</h1>
+                <button id = "button">Click to begin</button>
+                <h2><span id="best">0</span></h2>
+                <h2 id = "scoreTitle">
+                    Best pontuation
+                </h2>
+                
+            </div>
         </div>
-    </div>
+        
     </body>
 
-    
+    <script>
+        titles = ['Archery game', 'Jogo do arqueiro']
+        buttons = ['Click to begin', 'Clique para começar']
+        scores = ['Best pontuation', 'Melhor pontuação']
+
+        var currentBLang = navigator.language || navigator.userLanguage;
+        if (currentBLang == 'en-US'){
+            title = titles[0]
+            button = buttons[0]
+            score = scores[0]
+        } else {
+            title = titles[1]
+            button = buttons[1]
+            score = scores[1]
+        }
+
+        document.getElementById('title').innerHTML = title;
+        document.getElementById('button').innerHTML = button;
+        document.getElementById('scoreTitle').innerHTML = score;
+
+    </script>
+     
 </html>
